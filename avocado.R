@@ -31,5 +31,10 @@ ggplot(data, aes(x=AveragePrice, fill=type))+geom_density()+facet_wrap(~ type)+
 organic<- data %>% 
   select(Date, AveragePrice, Total.Volume, type)%>%
                           filter(type=="organic")%>%
-  select(-type)
-  
+class(organic)
+install.packages("tibbletime")
+library(tibbletime)
+
+organic$Date<-as.Date(organic$Date, "Y-m-d")
+organic<-as_tbl_time(organic, index=Date)
+
