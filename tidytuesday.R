@@ -21,11 +21,14 @@ dateSearch<-seq(as.Date("2010/01/01"), by = "year", length.out = 5)
 
 
 
+install.packages("paletteer")
 
+install.packages("ggtext")
+devtools::install_github("clauswilke/ggtext")
 
 ################
 library(tidyverse)
-test
-test 
+library (paletteer)
+library(ggtext)
+library(rvest)
 
-test
