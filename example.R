@@ -17,3 +17,16 @@ big_epa_cars %>%
 
 big_epa_cars %>%
   ggplot(aes(highway08, city08))
+
+
+str(iris)
+
+test2<-iris
+
+test<-iris%>% group_by(Species)
+
+test3<-group_split(test)
+
+
+
+
