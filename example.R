@@ -1,7 +1,7 @@
 # city economy file
 library(tidyverse)
 library(ggplot2)
-theme_set (theme_light)
+theme_set (theme_light())
 
 
 big_epa_cars <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-10-15/big_epa_cars.csv") %>%
@@ -26,6 +26,40 @@ test2<-iris
 test<-iris%>% group_by(Species)
 
 test3<-group_split(test)
+#_____________
+
+spotify_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-21/spotify_songs.csv')
+
+#plot danceability vs track_popularity
+
+
+test2<-spotify_songs %>% 
+  count(new=danceability/2, track_artist, sort=TRUE)
+
+test<-spotify_songs %>% 
+  count(new=danceability/2, sort=TRUE)
+
+
+spotify_songs %>% ggplot() +
+  geom_point(aes(track_popularity, danceability))
+
+#count number of unique artists
+artists<-spotify_songs %>% 
+  group_by(track_artist)%>%
+  mutate(number=n())
+
+
+track_artist, sort=TRUE, name="number")%>%
+  add_count()
+
+
+
+artists<-spotify_songs %>% 
+  mutate(n=count(track_artist, sort=TRUE))
+
+%>%
+  pull()
+
 
 
 
