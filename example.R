@@ -40,6 +40,33 @@ test<-spotify_songs %>%
   count(new=danceability/2, sort=TRUE)
 
 
+spotify_songs %>%
+  group_by(playlist_name) %>%
+  summarise(avg_pop=mean(track_popularity))
+
+test<-spotify_songs %>%
+  group_by(playlist_name) %>%
+  summarise(avg_pop=mean(track_popularity))
+is.grouped_df(test)
+
+test3<-spotify_songs %>%
+  add_count(playlist_name, sort=TRUE) %>%
+  filter(n>5) %>%
+  group_by(playlist_name) %>%
+  summarise(avg_pop=list(t.test(track_popularity)))
+is.grouped_df(test3)
+
+
+test2<-spotify_songs %>%
+  group_by(playlist_name) %>%
+  mutate(avg_pop=mean(track_popularity))
+
+is.grouped_df(test2)
+
+
+
+
+
 spotify_songs %>% ggplot() +
   geom_point(aes(track_popularity, danceability))
 
