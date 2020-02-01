@@ -56,6 +56,9 @@ test3<-spotify_songs %>%
   summarise(avg_pop=list(t.test(track_popularity)))
 is.grouped_df(test3)
 
+test4<-test3 %>%
+  flatten()
+
 
 test2<-spotify_songs %>%
   group_by(playlist_name) %>%

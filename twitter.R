@@ -16,6 +16,10 @@ twitter_token <- create_token(
   consumer_key = key,
   consumer_secret = secret)
 
+
+bushfires<-search_tweets(q = "bushfires", n = 10000)
+bushfires2<-search_tweets(q = "bushfiresAustralia", n = 10000)
+
 cor<-search_tweets(q = "coronavirus", n = 10000, retryonratelimit = TRUE)
 cor2<-search_tweets(q = "#coronavirus", n = 10000, retryonratelimit = TRUE)
 cor3<-search_tweets(q = "WuhanCoronavirus", n = 10000, retryonratelimit = TRUE)
@@ -31,15 +35,16 @@ bushfires5<-search_tweets(q = "ArsonEmergency", n = 10000, retryonratelimit = TR
 
 
 
-save_as_csv(bushfires, "data/bushfires.csv")
-save_as_csv(bushfires2, "data/bushfires2.csv")
-save_as_csv(bushfires3, "data/bushfires3.csv")
-save_as_csv(bushfires4, "data/bushfires4.csv")
-save_as_csv(bushfires5, "data/bushfires5.csv")
+save_as_csv(bushfires, "data/01.02.2020/bushfires.csv")
+save_as_csv(bushfires2, "data/01.02.2020/bushfires2.csv")
+save_as_csv(bushfires3, "data/01.02.2020/bushfires3.csv")
+save_as_csv(bushfires4, "data/01.02.2020/bushfires4.csv")
+save_as_csv(bushfires5, "data/01.02.2020/bushfires5.csv")
 
 
-save_as_csv(cor, "data/cor.csv")
-save_as_csv(cor2, "data/cor2.csv")
+save_as_csv(cor, "data/01.02.2020/cor.csv")
+save_as_csv(cor2, "data/01.02.2020/cor2.csv")
+save_as_csv(cor3, "data/01.02.2020/cor3.csv")
 
 
 
