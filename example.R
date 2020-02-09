@@ -91,6 +91,8 @@ artists<-spotify_songs %>%
   pull()
 
 
+jamesBond<-readxl::read_excel("dataT/Week5Bond.xlsx")
+
 
 
 
